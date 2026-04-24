@@ -1,0 +1,139 @@
+
+ Homework
+📝 Task 1
+let num = 15;
+
+console.log(num % 2); // check remainder
+
+📝 Task 2
+let a = 10;
+let b = "10";
+
+console.log(a == b);
+console.log(a === b);
+
+📝 Task 3
+
+Create a balance system:
+
+let balance = 500;
+balance -= 100;
+
+console.log(balance);
+
+
+
+-----nxt task----
+
+
+👉 Write the output of the following:
+
+let a = 15;
+let b = 4;
+
+console.log(a + b);
+console.log(a - b);
+console.log(a * b);
+console.log(a / b);
+console.log(a % b);
+
+👉 Predict first, then run the code.
+
+
+
+
+
+
+-----nxt task-----
+
+Even / Odd Check
+
+👉 Write a program:
+
+let num = 7;
+
+✔ Check if the number is even or odd
+✔ Print "Even" or "Odd"
+
+
+
+
+
+-----Next task -----
+
+
+
+ Comparison Practice
+
+👉 Find the output:
+
+console.log(20 > 10);
+console.log(5 < 2);
+console.log(10 == "10");
+console.log(10 === "10");
+console.log(15 != 10);
+
+👉 Then explain:
+
+Why == and === give different results?
+
+
+
+
+
+----- Next Task -----
+
+
+ Fill in the Blanks
+
+👉 Complete the code:
+
+let x = 10;
+
+x ___ 5;   // should become 15
+x ___ 3;   // should become 12
+
+
+
+
+-----Next Task -----
+
+ Real-Life Logic (Important)
+🔹 Question 1: Pass or Fail
+let marks = 32;
+
+✔ Print "Pass" if marks ≥ 35
+✔ Otherwise print "Fail"
+
+🔹 Question 2: Greater Number
+let a = 25;
+let b = 30;
+
+✔ Print which number is greater
+
+🔹 Question 3: Login Check
+let password = "admin123";
+
+✔ If password is "admin123" → print "Login Successful"
+✔ Else → "Wrong Password"
+
+
+----- Next Task -----
+
+ Assignment Operators Practice
+
+👉 Complete:
+
+let balance = 1000;
+
+// subtract 200
+// add 500
+// multiply by 2
+
+console.log(balance);
+
+ 
+
+ 
+
+End Summary ==> Today we learned how to perform calculations and comparisons using operators.

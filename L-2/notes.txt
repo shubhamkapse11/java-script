@@ -1,0 +1,149 @@
+
+Revision:
+
+What is a variable?
+What are data types?
+
+👉 Small code:
+
+let name = "Rahul";
+let age = 20;
+🟢 2. What is an Operator?
+🧠 Definition (Tell students clearly)
+
+An operator is a symbol used to perform operations on values or variables.
+
+🌍 Real-Life Example
+Calculator uses + - × ÷
+Comparing marks → pass or fail
+
+👉 Same concept in JavaScript
+
+🟢 3. Types of Operators (Today’s Focus)
+
+We will cover:
+
+Arithmetic Operators
+Comparison Operators
+Assignment Operators (basic)
+🟢 4. Arithmetic Operators (Math Operations)
+🧠 Definition
+
+Arithmetic operators are used to perform mathematical calculations.
+
+📌 List
++ Addition
+- Subtraction
+* Multiplication
+/ Division
+% Modulus (remainder)
+💻 Example 1
+let a = 10;
+let b = 5;
+
+console.log(a + b); // 15
+console.log(a - b); // 5
+console.log(a * b); // 50
+console.log(a / b); // 2
+💻 Example 2 (Important)
+let a = 10;
+let b = 3;
+
+console.log(a % b); // 1
+🧠 Explain Modulus (VERY IMPORTANT)
+
+It gives the remainder after division
+
+🌍 Real-Life Use Case
+Check even/odd number:
+let num = 4;
+
+if (num % 2 === 0) {
+  console.log("Even");
+}
+🟢 5. Assignment Operators
+🧠 Definition
+
+Used to assign values to variables.
+
+💻 Example
+let x = 10;
+
+x = x + 5;  // 15
+Short Form
+x += 5; // same as x = x + 5
+📌 Other Examples
+x -= 2;
+x *= 3;
+x /= 2;
+🌍 Real-Life Use Case
+Updating balance:
+let balance = 1000;
+
+balance -= 200; // spent money
+console.log(balance);
+
+🟢 6. Comparison Operators (Very Important for Logic)
+🧠 Definition
+
+Used to compare two values and return true or false.
+
+📌 List
+== equal
+=== strict equal ✅
+!= not equal
+> greater than
+< less than
+💻 Example 1
+let a = 10;
+let b = 5;
+
+console.log(a > b); // true
+💻 Example 2
+console.log(10 == "10");  // true
+console.log(10 === "10"); // false
+🧠 Explain Clearly
+== → checks value only
+=== → checks value + type (IMPORTANT)
+
+👉 Always prefer ===
+
+🌍 Real-Life Use Case
+
+Login system:
+
+let password = "1234";
+
+if (password === "1234") {
+  console.log("Login Success");
+}
+🟢 7. Combine Concepts (Mini Logic)
+💻 Example
+let marks = 40;
+
+console.log(marks >= 35);
+
+👉 Output: true (pass)
+
+🟢 8. Mini Activity (Class Practice)
+
+Ask students:
+
+let a = 20;
+let b = 10;
+
+console.log(a + b);
+console.log(a > b);
+console.log(a === b);
+🟢 9. Small Challenge
+
+👉 Ask:
+Write code to:
+
+Check if number is greater than 50
+Check if two values are equal
+🟢 10. Common Mistakes
+
+❌ Using = instead of ==
+❌ Confusing == and ===
+❌ Not understanding %
