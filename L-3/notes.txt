@@ -1,0 +1,185 @@
+Understand decision making in programming
+Use if, else, else if
+Write real-life logic (pass/fail, login, eligibility)
+🧑‍🏫 1. Quick Revision (5 mins)
+
+Ask:
+
+What is an operator?
+What does === mean?
+
+👉 Small revision code:
+
+console.log(10 > 5);   // true
+console.log(10 === "10"); // false
+🟢 2. Why Do We Need Conditions?
+🧠 Explain Like This:
+
+In real life, we take decisions based on conditions.
+
+🌍 Real-Life Examples
+If it rains → take umbrella
+If marks ≥ 35 → pass
+If password correct → login
+
+👉 Same logic in JavaScript
+
+🟢 3. What is if Statement?
+🧠 Definition
+
+if is used to execute code only when a condition is true.
+
+💻 Syntax
+if (condition) {
+  // code runs if condition is true
+}
+💻 Example 1 (Basic)
+let age = 18;
+
+if (age >= 18) {
+  console.log("You can vote");
+}
+🧠 Explain
+Condition → age >= 18
+If true → runs code
+If false → nothing happens
+🟢 4. if-else (Two Conditions)
+🧠 Definition
+
+Used when we have two outcomes (true or false)
+
+💻 Syntax
+if (condition) {
+  // true block
+} else {
+  // false block
+}
+💻 Example (Pass/Fail)
+let marks = 30;
+
+if (marks >= 35) {
+  console.log("Pass");
+} else {
+  console.log("Fail");
+}
+🌍 Real-Life Use Case
+
+Student result system ✔️
+
+🟢 5. else if (Multiple Conditions)
+🧠 Definition
+
+Used when we have multiple conditions
+
+💻 Syntax
+if (condition1) {
+  
+} else if (condition2) {
+  
+} else {
+  
+}
+💻 Example (Grades System)
+let marks = 75;
+
+if (marks >= 90) {
+  console.log("A Grade");
+} else if (marks >= 70) {
+  console.log("B Grade");
+} else if (marks >= 50) {
+  console.log("C Grade");
+} else {
+  console.log("Fail");
+}
+🧠 Explain Flow
+Checks one by one
+First true condition runs
+Others are skipped
+🟢 6. Real-Life Example (Login System)
+let password = "1234";
+
+if (password === "1234") {
+  console.log("Login Success");
+} else {
+  console.log("Wrong Password");
+}
+🟢 7. Real-Life Example (Even/Odd)
+let num = 7;
+
+if (num % 2 === 0) {
+  console.log("Even");
+} else {
+  console.log("Odd");
+}
+🟢 8. Nested if (Basic Intro)
+💻 Example
+let age = 20;
+let hasID = true;
+
+if (age >= 18) {
+  if (hasID) {
+    console.log("Allowed");
+  } else {
+    console.log("ID Required");
+  }
+} else {
+  console.log("Not Allowed");
+}
+🟢 9. Mini Activity (Class Practice)
+
+Ask students:
+
+let age = 16;
+
+if (age >= 18) {
+  console.log("Adult");
+} else {
+  console.log("Minor");
+}
+🟢 10. Small Challenges
+
+👉 Give these:
+
+Task 1:
+
+Check number is positive or negative
+
+let num = -5;
+Task 2:
+
+Check if user can drive (age ≥ 18)
+
+Task 3:
+
+Check if marks ≥ 40 → pass else fail
+
+🟢 11. Common Mistakes
+
+❌ Using = instead of ===
+❌ Wrong condition logic
+❌ Forgetting { }
+
+🟢 12. Homework
+📝 Task 1
+let num = 10;
+
+if (num > 0) {
+  console.log("Positive");
+} else {
+  console.log("Negative");
+}
+📝 Task 2
+let age = 17;
+
+if (age >= 18) {
+  console.log("Can Vote");
+} else {
+  console.log("Cannot Vote");
+}
+📝 Task 3 (Important)
+let marks = 85;
+
+// print grade using else if
+🟢 13. End Summary
+
+==> learned how to take decisions in JavaScript using if-else.

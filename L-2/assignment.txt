@@ -4,13 +4,14 @@
 let num = 15;
 
 console.log(num % 2); // check remainder
+answer = 1
 
 📝 Task 2
 let a = 10;
 let b = "10";
 
-console.log(a == b);
-console.log(a === b);
+console.log(a == b);  
+console.log(a === b); 
 
 📝 Task 3
 

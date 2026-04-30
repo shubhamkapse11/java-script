@@ -1,0 +1,155 @@
+Level 1: Basic Understanding (Warm-up)
+
+👉 These check core concepts
+
+Q1. What will be the output?
+
+console.log(5 > 3);
+
+Q2. What will be the output?
+
+console.log(10 === "10");
+
+Q3. Fix the mistake
+
+let age = 18;
+
+if (age = 18) {
+  console.log("Adult");
+}
+🟡 Level 2: Simple if Statements
+
+👉 Practice basic conditions
+
+Task 1: Positive or Negative
+
+let num = 8;
+// Write condition
+
+Task 2: Check Voting Eligibility
+
+let age = 20;
+// Print "Can Vote"
+
+Task 3: Temperature Check
+
+let temp = 35;
+// If temp > 30 → "Hot"
+🟡 Level 3: if-else Practice
+
+👉 Two outcomes (true / false)
+
+Task 4: Pass or Fail
+
+let marks = 32;
+// ≥ 35 → Pass else Fail
+
+Task 5: Even or Odd
+
+let num = 11;
+
+Task 6: Login System
+
+let password = "abcd123";
+
+// correct → "Login Success"
+// wrong → "Wrong Password"
+🟡 Level 4: else if (Multiple Conditions)
+
+👉 Real-life logic building
+
+Task 7: Grade System
+
+let marks = 78;
+
+// ≥ 90 → A
+// ≥ 70 → B
+// ≥ 50 → C
+// else → Fail
+
+Task 8: Traffic Light
+
+let color = "red";
+
+// red → Stop
+// yellow → Ready
+// green → Go
+
+Task 9: Salary Bonus
+
+let salary = 50000;
+
+// ≥ 100000 → "High Bonus"
+// ≥ 50000 → "Medium Bonus"
+// else → "Low Bonus"
+🟡 Level 5: Real-Life Logic (Important)
+
+👉 Makes students think like programmers
+
+Task 10: Driving Eligibility
+
+let age = 17;
+
+// ≥ 18 → "Can Drive"
+// else → "Cannot Drive"
+
+Task 11: ATM Withdrawal
+
+let balance = 1000;
+let withdraw = 1500;
+
+// if enough balance → "Transaction Successful"
+// else → "Insufficient Balance"
+
+Task 12: Username & Password Check
+
+let username = "admin";
+let password = "1234";
+
+// both correct → "Login Success"
+// else → "Invalid Credentials"
+🟡 Level 6: Nested if (Thinking Level 🔥)
+
+👉 Slightly advanced logic
+
+Task 13: Club Entry
+
+let age = 20;
+let hasID = false;
+
+// age ≥ 18:
+//    if hasID → "Entry Allowed"
+//    else → "ID Required"
+// else → "Not Allowed"
+
+Task 14: Online Order
+
+let amount = 1200;
+let isMember = true;
+
+// if amount ≥ 1000:
+//    if member → "Extra Discount"
+//    else → "Normal Discount"
+// else → "No Discount"
+🟡 Level 7: Challenge Questions 🚀
+
+👉 These build real problem-solving
+
+Challenge 1: Number Check
+
+let num = 0;
+
+// positive / negative / zero
+
+Challenge 2: Largest of Two Numbers
+
+let a = 10;
+let b = 20;
+
+Challenge 3: Simple Calculator
+
+let num1 = 10;
+let num2 = 5;
+let operator = "+"; // +, -, *, /
+
+// perform operation
