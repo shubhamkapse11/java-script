@@ -1,4 +1,4 @@
-👉 What is JavaScript?
+👉 What is JavaScript ?
 JavaScript (JS) is a programming language used to make web pages interactive.
 
  HTML → structure
