@@ -1,0 +1,427 @@
+1. What will be the output of this code?
+
+let day = 2;
+
+switch(day) {
+  case 1:
+    console.log("Monday");
+    break;
+
+  case 2:
+    console.log("Tuesday");
+    break;
+
+  default:
+    console.log("Invalid");
+}
+
+
+
+
+
+-----||-----
+
+
+
+
+
+2. What will be the output of this code?
+
+let color = "red";
+
+switch(color) {
+  case "green":
+    console.log("Go");
+    break;
+
+  case "red":
+    console.log("Stop");
+    break;
+}
+
+
+
+
+
+-----||-----
+
+
+
+
+
+3. What will happen if break is removed from this code?
+
+let x = 1;
+
+switch(x) {
+  case 1:
+    console.log("One");
+
+  case 2:
+    console.log("Two");
+}
+
+
+
+
+
+-----||-----
+
+
+
+
+
+4. Find the output of this loop.
+
+for(let i = 1; i <= 5; i++) {
+  console.log(i);
+}
+
+
+
+
+
+-----||-----
+
+
+
+
+
+5. What will this code print?
+
+for(let i = 2; i <= 10; i += 2) {
+  console.log(i);
+}
+
+
+
+
+
+-----||-----
+
+
+
+
+
+6. Write the output of this code.
+
+for(let i = 5; i >= 1; i--) {
+  console.log(i);
+}
+
+
+
+
+
+-----||-----
+
+
+
+
+
+7. What is wrong in this code?
+
+for(let i = 1; i <= 5; i++) {
+  console.log("Hello")
+}
+
+
+
+
+
+-----||-----
+
+
+
+
+
+8. Find the output.
+
+let i = 1;
+
+while(i <= 3) {
+  console.log(i);
+  i++;
+}
+
+
+
+
+
+-----||-----
+
+
+
+
+
+9. What problem is in this code?
+
+let i = 1;
+
+while(i <= 5) {
+  console.log(i);
+}
+
+
+
+
+
+-----||-----
+
+
+
+
+
+10. Find the output.
+
+let i = 1;
+
+do {
+  console.log(i);
+  i++;
+} while(i <= 5);
+
+
+
+
+
+-----|NOW Code this|-----
+
+
+
+
+1. Write a switch statement to print the name of the day when a number from 1 to 7 is given.
+
+
+
+
+
+-----||-----
+
+
+
+
+
+2. Write a switch statement to print "Hot", "Cold", or "Rainy" based on weather input.
+
+
+
+
+
+-----||-----
+
+
+
+
+
+3. Create a switch statement to print the month name for numbers 1 to 12.
+
+
+
+
+
+-----||-----
+
+
+
+
+
+4. Write a program using switch statement to display traffic light actions for red, yellow, and green.
+
+
+
+
+
+-----||-----
+
+
+
+
+
+5. Create a switch statement to print grade messages for grades A, B, C, and D.
+
+
+
+
+
+-----||-----
+
+
+
+
+
+6. Write a for loop to print numbers from 1 to 10.
+
+
+
+
+
+-----||-----
+
+
+
+
+
+7. Write a for loop to print even numbers from 2 to 20.
+
+
+
+
+
+-----||-----
+
+
+
+
+
+8. Write a for loop to print odd numbers from 1 to 15.
+
+
+
+
+
+-----||-----
+
+
+
+
+
+9. Write a program using for loop to print "Hello World" 5 times.
+
+
+
+
+
+-----||-----
+
+
+
+
+
+10. Write a while loop to print numbers from 10 to 1.
+
+
+
+
+
+-----||-----
+
+
+
+
+
+11. Write a while loop to print multiples of 3 from 3 to 30.
+
+
+
+
+
+-----||-----
+
+
+
+
+
+12. Write a do...while loop to print numbers from 1 to 5.
+
+
+
+
+
+-----||-----
+
+
+
+
+
+13. Write a do...while loop that prints "Welcome" 3 times.
+
+
+
+
+
+-----||-----
+
+
+
+
+
+14. Create a string variable and print it in uppercase using toUpperCase().
+
+
+
+
+
+-----||-----
+
+
+
+
+
+15. Create a string variable and print it in lowercase using toLowerCase().
+
+
+
+
+
+-----||-----
+
+
+
+
+
+16. Write a program to find the length of the string "JavaScript".
+
+
+
+
+
+-----||-----
+
+
+
+
+
+17. Write a program to print the first character of the string "Programming" using charAt().
+
+
+
+
+
+-----||-----
+
+
+
+
+
+18. Write a program to find the position of the word "World" in the string "Hello World" using indexOf().
+
+
+
+
+
+-----||-----
+
+
+
+
+
+19. Write a program to join first name and last name using string concatenation.
+
+
+
+
+
+-----||-----
+
+
+
+
+
+20. Write a program to print "Value not found" if a character does not exist in a string using indexOf().
+
+
+
+
+
+-----||-----

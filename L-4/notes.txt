@@ -1,1 +1,484 @@
-hi
+What is a switch statement?
+-A switch statement is used to run different code based on different conditions (cases).
+ Example :
+               switch(expression) {
+              case value1:
+                // code to run
+                break;
+
+              case value2:
+                // code to run
+                break;
+
+              default:
+                // runs if no case matches
+            }
+
+
+Example prectical :
+
+               let day = 2;
+               
+               switch(day) {
+                 case 1:
+                   console.log("Monday");
+                   break;
+               
+                 case 2:
+                   console.log("Tuesday");
+                   break;
+               
+                 case 3:
+                   console.log("Wednesday");
+                   break;
+               
+                 default:
+                   console.log("Invalid day");
+               }
+
+
+
+
+            ----||----
+
+
+
+Important: Without break
+
+If you forget break, execution continues (called fall-through).
+
+               let x = 1;
+
+               switch(x) {
+                 case 1:
+                   console.log("One");
+                 case 2:
+                   console.log("Two");
+               }
+
+               👉 Output:
+
+               One
+               Two   
+
+                
+                ----||----
+
+ Using default:
+
+Runs when no case matches.
+
+                let color = "blue";
+
+                switch(color) {
+                  case "red":
+                    console.log("Stop");
+                    break;
+                
+                  case "green":
+                    console.log("Go");
+                    break;
+                
+                  default:
+                    console.log("Unknown color");
+                }            
+
+
+
+
+                ----||----
+
+
+
+   What is a Loop?
+
+-A loop is used when we want to repeat some code multiple times instead of writing it again and again.
+
+Without Loop
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+
+With Loop:      
+      for (let i = 1; i <= 4; i++) {
+        console.log("Hello");
+      }
+
+
+
+
+Why Do We Use Loops?
+
+Loops help us:
+
+Save time
+Reduce repeated code
+Work with large data
+Automate repetitive tasks
+
+
+
+
+Types of Loops in JavaScript
+
+for loop
+while loop
+do...while loop
+for...of loop
+forEach() (later)
+
+1. for Loop
+Syntax
+for (initialization; condition; update) {
+  // code
+}
+
+
+Example-1 :
+    for (let i = 1; i <= 5; i++) {
+      console.log(i);
+    }
+
+Step-by-Step Execution
+Step 1
+let i = 1
+Step 2
+
+Check:
+
+i <= 5
+
+TRUE → run code
+
+console.log(i)
+
+Output:
+
+1
+Step 3
+
+Update:
+
+i++
+
+Now:
+
+i = 2
+
+Again condition checks.
+
+This repeats until:
+
+i = 6
+
+Condition becomes FALSE.
+
+Loop stops.
+
+Visual Flow
+Start → Condition → Code → Update → Repeat
+
+
+
+Example-2:
+     for (let i = 2; i <= 10; i += 2) {
+               console.log(i);
+             }             
+
+
+
+
+
+
+2. while Loop
+
+The while loop runs while the condition is true.
+
+Syntax
+while (condition) {
+  // code
+}
+Example
+let i = 1;
+
+while (i <= 5) {
+  console.log(i);
+  i++;
+}
+How It Works
+Step 1
+
+Condition checks:
+
+i <= 5
+
+TRUE → run code
+
+Step 2
+console.log(i)
+Step 3
+i++
+
+Then condition checks again.
+
+Important Note
+
+If we forget:
+
+i++
+
+the loop never stops.
+
+This becomes an infinite loop.
+
+Infinite Loop Example
+let i = 1;
+
+while (i <= 5) {
+  console.log(i);
+}
+
+Why infinite?
+Because i never changes.
+
+
+
+
+
+
+3. do...while Loop
+
+The do...while loop executes the code first, then checks the condition.
+
+This means:
+✅ It runs at least once.
+
+Syntax
+do {
+  // code
+} while (condition);
+Example
+let i = 1;
+
+do {
+  console.log(i);
+  i++;
+} while (i <= 5);
+
+
+Execution Flow
+Code Runs First → Condition Checks → Repeat
+1. Run the code
+2. Check the condition
+3. If condition is true → repeat
+4. If condition is false → stop
+
+
+
+       ----- || -----
+
+
+
+
+JavaScript Strings
+
+A string is text written inside quotes.
+
+let name = "Rahul";
+
+
+   let firstName= "Animesh";
+   let nameNest= ``;
+   let newName = new String("shubham");
+
+
+Strings can use:
+
+double quotes " "
+single quotes ' '
+1. String Concatenation
+What is Concatenation?
+
+Concatenation means joining strings together.
+
+Using +
+let firstName = "John";
+let lastName = "Doe";
+
+let fullName = firstName + " " + lastName;
+
+console.log(fullName);
+
+Output:
+
+John Doe
+Step-by-Step
+firstName + " " + lastName
+
+becomes:
+
+"John" + " " + "Doe"
+
+Result:
+
+"John Doe"
+Concatenating String with Number
+let age = 20;
+
+console.log("Age is " + age);
+
+Output:
+
+Age is 20
+
+
+2. toUpperCase()
+
+Converts all letters to CAPITAL letters.
+
+Syntax
+string.toUpperCase()
+Example
+let text = "hello";
+
+console.log(text.toUpperCase());
+
+Output:
+
+HELLO
+Important Point
+
+Original string does NOT change.
+
+let text = "hello";
+
+text.toUpperCase();
+
+console.log(text);
+
+Output:
+
+hello
+To Store Changed Value
+let text = "hello";
+
+let upper = text.toUpperCase();
+
+console.log(upper);
+
+Output:
+
+HELLO
+
+
+
+3. toLowerCase()
+
+Converts all letters to small letters.
+
+Syntax
+string.toLowerCase()
+Example
+let text = "HELLO";
+
+console.log(text.toLowerCase());
+
+Output:
+
+hello
+
+
+4. length
+
+Used to find total number of characters.
+
+Spaces are also counted.
+
+Syntax
+string.length
+
+Notice:
+❌ no parentheses
+
+Example
+let text = "JavaScript";
+
+console.log(text.length);
+
+Output:
+
+10
+Example with Space
+let text = "Hello World";
+
+console.log(text.length);
+
+Output:
+
+11
+
+Because space is also a character.
+
+5. charAt()
+
+Used to get character at a specific position.
+
+Syntax
+string.charAt(index)
+Important Point
+
+Index starts from 0.
+
+H  E  L  L  O
+0  1  2  3  4
+Example
+let text = "HELLO";
+
+console.log(text.charAt(0));
+
+Output:
+
+H
+More Examples
+let text = "JavaScript";
+
+console.log(text.charAt(4));
+
+Output:
+
+S
+6. indexOf()
+
+Used to find position of a character or word.
+
+Syntax
+string.indexOf(value)
+Example
+let text = "JavaScript";
+
+console.log(text.indexOf("S"));
+
+Output:
+
+4
+Example 2
+let text = "Hello World";
+
+console.log(text.indexOf("World"));
+
+Output:
+
+6
+If Value Not Found
+let text = "Hello";
+
+console.log(text.indexOf("z"));
+
+Output:
+
+-1
+
+-1 means:
+❌ value not found    
+
