@@ -1,0 +1,418 @@
+In JavaScript, memory management is handled automatically by the engine, but understanding how it works is crucial for writing efficient code. The memory allocation process is divided into two primary areas: Stack Memory and Heap Memory (0:43 - 3:24).
+
+1. Stack Memory
+Usage: Stores Primitive Data Types (e.g., Number, String, Boolean, Null, Undefined).
+Characteristics:
+It has a fixed size.
+Access is very fast.
+Data is stored in a simple, sequential manner.
+2. Heap Memory
+Usage: Stores Reference Types (e.g., Objects, Arrays, Functions).
+Characteristics:
+It has a dynamic/flexible size.
+Used for larger and more complex data structures.
+The engine manages this memory space more actively.
+The Role of References
+When you create an object or an array, the actual data is stored in the Heap, but the variable name (the reference/pointer) is stored in the Stack.
+
+Example:
+If you create an array let arr = [1, 2, 3]:
+
+The array data [1, 2, 3] is placed in the Heap Memory.
+The identifier arr is stored in the Stack Memory, acting as a pointer to the address where the data resides in the Heap.
+Key Takeaway:
+Variables that are reference types do not contain the actual data itself; they contain a reference to the location in memory where that data is stored. This is why copying reference types often creates a shallow copy—both variables end up pointing to the same location in the Heap (8:54 - 10:40).
+
+
+
+
+
+
+1. What is an Array?
+Definition
+
+An Array is a special variable in JavaScript used to store multiple values in a single variable.
+
+Real Life Example
+
+Imagine a classroom.
+
+Instead of creating separate variables:
+
+let student1 = "Rahul";
+let student2 = "Aman";
+let student3 = "Rohit";
+
+We can store all students in one array:
+
+let students = ["Rahul", "Aman", "Rohit"];
+Why Use Arrays?
+
+✅ Store multiple values together
+✅ Easy to manage data
+✅ Easy looping and operations
+✅ Saves time and code
+
+2. Create an Array
+Method 1: Array Literal (Most Used)
+let fruits = ["Apple", "Banana", "Mango"];
+Method 2: Using Array Constructor
+let numbers = new Array(1, 2, 3, 4);
+3. Array Index
+
+Each value in array has a position called Index.
+
+Important:
+
+Index always starts from 0
+
+Example
+let fruits = ["Apple", "Banana", "Mango"];
+Value	Index
+Apple	0
+Banana	1
+Mango	2
+Access Array Elements
+let fruits = ["Apple", "Banana", "Mango"];
+
+console.log(fruits[0]);
+console.log(fruits[1]);
+console.log(fruits[2]);
+Output:
+Apple
+Banana
+Mango
+
+
+4. Update Array Value
+let fruits = ["Apple", "Banana", "Mango"];
+
+fruits[1] = "Orange";
+
+console.log(fruits);
+Output:
+["Apple", "Orange", "Mango"]
+
+
+
+------||---
+
+
+5. Array Length
+
+Used to count total elements.
+
+let fruits = ["Apple", "Banana", "Mango"];
+
+console.log(fruits.length);
+Output:
+3
+
+
+
+         
+         
+         -----||-----
+
+
+
+         
+6. Important Array Methods
+push()
+Definition
+
+Adds element at the END of array.
+
+Syntax
+array.push(value);
+Example
+let fruits = ["Apple", "Banana"];
+
+fruits.push("Mango");
+
+console.log(fruits);
+Output
+["Apple", "Banana", "Mango"]
+Real Life Example
+
+Adding a new student at the end of attendance list.
+
+pop()
+Definition
+
+Removes LAST element from array.
+
+Example
+let fruits = ["Apple", "Banana", "Mango"];
+
+fruits.pop();
+
+console.log(fruits);
+Output
+["Apple", "Banana"]
+shift()
+Definition
+
+Removes FIRST element from array.
+
+Example
+let fruits = ["Apple", "Banana", "Mango"];
+
+fruits.shift();
+
+console.log(fruits);
+Output
+["Banana", "Mango"]
+unshift()
+Definition
+
+Adds element at the BEGINNING of array.
+
+Example
+let fruits = ["Banana", "Mango"];
+
+fruits.unshift("Apple");
+
+console.log(fruits);
+Output
+["Apple", "Banana", "Mango"]
+Quick Revision Table
+Method	Work
+push()	Add at end
+pop()	Remove from end
+shift()	Remove from start
+unshift()	Add at start
+
+
+
+
+-------||--------
+
+
+
+
+1. What is an Object?
+Definition
+
+An Object in JavaScript is a collection of key-value pairs.
+
+Objects are used to store related data together.
+
+Real Life Example
+
+Think about a student.
+
+A student has:
+
+name
+age
+city
+course
+
+Instead of creating separate variables:
+
+let name = "Rahul";
+let age = 22;
+let city = "Bhopal";
+
+We can store everything inside one object:
+
+let student = {
+  name: "Rahul",
+  age: 22,
+  city: "Bhopal"
+};
+
+Why Use Objects?
+
+✅ Store related data together
+✅ Easy to manage complex data
+✅ Used everywhere in JavaScript
+✅ Important for APIs and MERN Stack
+
+2. Structure of Object
+let student = {
+  name: "Rahul",
+  age: 22
+};
+Understanding Object
+Part	Meaning
+name	Key
+Rahul	Value
+age	Key
+22	Value
+Important Point
+
+Objects store data in:
+
+key : value format
+
+3. Create Objects
+Method 1 – Object Literal (Most Used)
+let car = {
+  brand: "BMW",
+  color: "Black",
+  price: 5000000
+};
+
+
+Method 2 – Using new Object()
+let person = new Object();
+
+person.name = "Aman";
+person.age = 25;
+
+console.log(person);
+
+
+4. Access Object Values
+
+There are 2 ways.
+
+Method 1 – Dot Notation
+let student = {
+  name: "Rahul",
+  age: 22
+};
+
+console.log(student.name);
+console.log(student.age);
+Output
+Rahul
+22
+Method 2 – Bracket Notation
+console.log(student["name"]);
+console.log(student["age"]);
+Difference Between Dot & Bracket
+Dot Notation	Bracket Notation
+Easy syntax	Flexible
+Most commonly used	Useful for dynamic keys
+Example of Dynamic Key
+let keyName = "age";
+
+console.log(student[keyName]);
+Output
+22
+
+
+
+5. Add New Properties
+Definition
+
+We can add new data into object anytime.
+
+Example
+let student = {
+  name: "Rahul"
+};
+
+student.age = 22;
+
+console.log(student);
+Output
+{
+  name: "Rahul",
+  age: 22
+}
+6. Update Object Values
+let student = {
+  name: "Rahul",
+  age: 22
+};
+
+student.age = 25;
+
+console.log(student);
+Output
+{
+  name: "Rahul",
+  age: 25
+}
+
+
+
+
+7. Delete Properties
+let student = {
+  name: "Rahul",
+  age: 22
+};
+
+delete student.age;
+
+console.log(student);
+Output
+{
+  name: "Rahul"
+}
+
+
+
+
+8. Object with Function
+Definition
+
+Objects can also store functions.
+
+Function inside object is called a:
+
+Method
+Example
+let student = {
+
+  name: "Rahul",
+
+  greet: function(){
+    console.log("Hello Student");
+  }
+
+};
+
+student.greet();
+Output
+Hello Student
+Real Life Example
+
+A student object can:
+
+store data
+perform actions  
+
+
+9. Nested Objects
+Definition
+
+Object inside another object.
+
+Example
+let student = {
+
+  name: "Rahul",
+
+  address: {
+    city: "Bhopal",
+    state: "MP"
+  }
+
+};
+
+console.log(student.address.city);
+Output
+Bhopal
+
+
+
+10. Object.keys()
+Definition
+
+Returns all keys of object.
+
+Example
+let student = {
+  name: "Rahul",
+  age: 22
+};
+
+console.log(Object.keys(student));
+Output
+["name", "age"]

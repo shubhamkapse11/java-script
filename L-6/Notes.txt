@@ -1,0 +1,348 @@
+Goal of Today’s Class
+
+By the end of the class, students should:
+
+Understand what functions are
+Why functions are needed
+Create and call functions
+Use parameters and arguments
+Understand return values
+Learn function declaration, expression, and arrow functions
+
+
+🧑‍🏫 1. Introduction to Functions
+🧠 What is a Function?
+📌 Definition
+
+A function is a reusable block of code that performs a specific task.
+
+🌍 Real-Life Example
+🍵 Tea Machine Example
+
+Imagine a tea machine:
+
+You press button
+Machine performs steps
+Tea is ready
+
+👉 Same in programming:
+
+Call function
+Function performs task
+Gives result
+🧠 Why Functions Are Used?
+📌 Problem Without Functions
+console.log("Welcome Rahul");
+console.log("Welcome Amit");
+console.log("Welcome Neha");
+
+👉 Repeating code again and again ❌
+
+📌 Solution Using Function
+function welcome(name) {
+  console.log("Welcome " + name);
+}
+
+welcome("Rahul");
+welcome("Amit");
+welcome("Neha");
+
+
+
+
+✅ Benefits of Functions
+1. Reduce Code Redundancy
+
+👉 No repeated code
+
+2. Improve Readability
+
+👉 Code becomes clean and easy to understand
+
+3. Easier Debugging
+
+👉 If issue occurs, fix in one place only
+
+4. Reusability
+
+👉 Use same function many times
+
+🧑‍🏫 Teaching Line
+
+Say:
+
+“Functions help us write smarter code instead of repeating the same code again and again.”
+
+
+
+🟢 2. Function Basics
+📌 Function Syntax
+function functionName() {
+
+}
+🧠 Important Terms
+Term	Meaning
+Function Declaration	Creating function
+Function Call	Running function
+Parameters	Inputs in function
+Arguments	Values passed during call
+
+
+🟢 Example 1: Basic Function
+function greet() {
+  console.log("Hello Students");
+}
+
+greet();
+🧠 Explain Step-by-Step
+Step 1:
+function greet()
+
+👉 Function created
+
+Step 2:
+greet();
+
+👉 Function called/executed
+
+
+
+
+
+🟢 Example 2: Function with Parameters
+function greet(name) {
+  console.log("Hello " + name);
+}
+
+greet("Rahul");
+greet("Amit");
+🧠 Explain
+name
+
+👉 Parameter
+
+"Rahul"
+
+👉 Argument
+
+🌍 Real-Life Example
+
+Food delivery:
+
+Name on order form = parameter
+Actual customer name = argument
+
+
+
+
+
+🟢 Example 3: Multiple Parameters
+function add(a, b) {
+  console.log(a + b);
+}
+
+add(10, 20);
+🧠 Explain
+a = 10
+b = 20
+
+👉 Output: 30
+
+
+
+
+
+
+🟢 3. Return Values
+🧠 Definition
+
+The return keyword sends data back from a function.
+
+📌 Without Return
+function add(a, b) {
+  console.log(a + b);
+}
+
+add(10, 20);
+
+👉 Only prints value
+
+📌 With Return
+function add(a, b) {
+  return a + b;
+}
+
+let result = add(10, 20);
+
+console.log(result);
+🧠 Explain Carefully
+Step 1:
+return a + b;
+
+👉 Sends result back
+
+Step 2:
+let result = add(10, 20);
+
+👉 Store returned value
+
+🌍 Real-Life Example
+
+ATM machine:
+
+Insert card
+Withdraw money
+Machine RETURNS money
+
+👉 Function also returns value
+
+🟢 Important Point: Unreachable Code
+
+function test() {
+  return "Hello";
+
+  console.log("World");
+}
+
+👉 console.log("World") never runs ❌
+
+🧠 Explain
+
+After return, function stops immediately.
+
+
+
+
+
+🟢 4. JavaScript Type Handling
+📌 Example 1: Numbers
+function add(a, b) {
+  return a + b;
+}
+
+console.log(add(10, 20));
+
+👉 Output: 30
+
+📌 Example 2: Strings
+console.log(add("10", "20"));
+
+👉 Output: 1020
+
+🧠 Explain Clearly
+
+JavaScript behaves differently based on data type.
+
+🌍 Real-Life Explanation
+Number + Number → Addition
+String + String → Joining (concatenation)
+
+
+
+
+
+🟢 5. Function Variations
+📌 A. Function Declaration
+🧠 Definition
+
+Standard way of creating function using function keyword.
+
+function greet() {
+  console.log("Hello");
+}
+
+greet();
+📌 B. Function Expression
+🧠 Definition
+
+Function stored inside a variable.
+
+const greet = function() {
+  console.log("Hello Students");
+};
+
+greet();
+🧠 Explain
+
+Function becomes a value stored in variable.
+
+
+📌 C. Arrow Function (ES6)
+🧠 Definition
+
+Modern and shorter way to write functions.
+
+📌 Syntax
+const greet = () => {
+  console.log("Hello");
+};
+📌 Example with Parameters
+const add = (a, b) => {
+  return a + b;
+};
+
+console.log(add(5, 10));
+🧠 Short Arrow Function
+const add = (a, b) => a + b;
+🧠 Explain
+
+If only one line:
+👉 return keyword optional
+
+
+
+🟢 6. Mini Practice (Class Activity)
+Task 1
+
+Create function to print your name
+
+Task 2
+
+Create function to add two numbers
+
+Task 3
+
+Create function to check even/odd
+
+
+
+
+🟢 7. Interview Questions
+Q1. What is a function?
+
+A reusable block of code used to perform a task.
+
+Q2. Why functions are used?
+Reusability
+Cleaner code
+Easy debugging
+Q3. Difference between parameter and argument?
+Parameter	Argument
+Variable in function	Actual value passed
+Q4. Difference between function declaration and arrow function?
+
+👉 Syntax difference
+👉 Arrow functions are shorter and modern
+
+
+
+🟢 8. Homework
+📝 Task 1
+function multiply(a, b) {
+  return a * b;
+}
+
+console.log(multiply(5, 4));
+📝 Task 2
+
+Create function:
+
+check positive/negative
+print full name
+📝 Task 3
+
+Convert normal function into arrow function
+
+
+
+Today we learned functions, parameters, return values, and modern ways of writing functions.
