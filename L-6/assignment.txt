@@ -1,0 +1,41 @@
+Mini Practice (Class Activity)
+
+
+Task 1
+
+Create function to print your name
+
+
+
+
+Task 2
+
+Create function to add two numbers
+
+
+
+
+Task 3
+
+Create function to check even/odd
+
+
+
+
+
+🟢 8. Homework
+📝 Task 1
+function multiply(a, b) {
+  return a * b;
+}
+
+console.log(multiply(5, 4));
+📝 Task 2
+
+Create function:
+
+check positive/negative
+print full name
+📝 Task 3
+
+Convert normal function into arrow function
