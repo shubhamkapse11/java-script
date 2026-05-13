@@ -1,0 +1,1031 @@
+Hoisting in JavaScript
+Definition
+
+Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their scope before code execution.
+
+This means JavaScript first scans the code, stores declarations in memory, and then starts executing line by line.
+
+👉 Only declarations are hoisted, not initializations (values).
+
+Easy Understanding
+
+JavaScript works in 2 phases:
+
+Memory Creation Phase
+Variables and functions are stored in memory
+Execution Phase
+Code runs line by line
+
+Because of this behavior, hoisting happens.
+
+1. Hoisting of var
+Definition
+
+Variables declared with var are hoisted and initialized with undefined.
+
+This means you can access them before declaration, but their value will be undefined.
+
+Example
+console.log(a);
+
+var a = 10;
+
+Output:
+
+undefined
+Internal Working
+
+JavaScript internally treats it like this:
+
+var a;
+
+console.log(a);
+
+a = 10;
+Explanation
+var a moves to top
+Value 10 stays in same place
+Before assignment, value is undefined
+Another Example
+var city = "Indore";
+
+function test() {
+  console.log(city);
+
+  var city = "Bhopal";
+}
+
+test();
+
+Output:
+
+undefined
+Why?
+
+Inside function:
+
+var city;
+
+console.log(city);
+
+city = "Bhopal";
+
+The local variable is hoisted inside the function and hides the global variable.
+
+Important Points About var
+Function scoped
+Can be redeclared
+Hoisted with undefined
+Accessible before declaration
+Example
+var x = 10;
+var x = 20;
+
+console.log(x);
+
+Output:
+
+20
+
+
+
+
+------||------
+
+
+
+
+
+Hoisting of Function
+Definition
+
+Function hoisting means JavaScript stores complete function declarations in memory before execution.
+
+Because of this, we can call a function before declaring it.
+
+Example
+greet();
+
+function greet() {
+  console.log("Hello Students");
+}
+
+Output:
+
+Hello Students
+Why?
+
+JavaScript internally moves the whole function to memory:
+
+function greet() {
+  console.log("Hello Students");
+}
+
+greet();
+Function Expression Hoisting
+Definition
+
+In function expressions, only the variable declaration is hoisted, not the function value.
+
+Example
+sayHi();
+
+var sayHi = function () {
+  console.log("Hi");
+};
+
+Output:
+
+TypeError: sayHi is not a function
+Internal Working
+var sayHi;
+
+sayHi();
+
+sayHi = function () {
+  console.log("Hi");
+};
+
+Here:
+
+sayHi becomes undefined
+undefined() cannot execute like a function
+Difference Between Function Declaration and Function Expression
+Function Declaration	Function Expression
+Fully hoisted	Only variable hoisted
+Can call before declaration	Cannot call before assignment
+Stores complete function in memory	Stores undefined initially
+Example
+// Function Declaration
+hello();
+
+function hello() {
+  console.log("Hello");
+}
+// Function Expression
+hi();
+
+var hi = function () {
+  console.log("Hi");
+};
+
+
+
+
+
+------||------
+
+
+
+
+
+let in JavaScript
+Definition
+
+let is a keyword introduced in ES6 used to declare block-scoped variables.
+
+Variables declared with let can be updated, but cannot be redeclared in the same scope.
+
+Easy Understanding
+
+A block means:
+
+{
+  
+}
+
+Anything inside curly braces is called a block.
+
+let works only inside its block.
+
+Example
+{
+  let age = 22;
+
+  console.log(age);
+}
+
+Output:
+
+22
+
+Outside block:
+
+console.log(age);
+
+Output:
+
+ReferenceError
+Why?
+
+Because let is block scoped.
+
+Variable exists only inside the block where it is created.
+
+Features of let
+Block scoped
+Cannot redeclare in same scope
+Can reassign value
+Hoisted
+Works inside Temporal Dead Zone
+Example
+let a = 10;
+
+a = 20;
+
+console.log(a);
+
+Output:
+
+20
+Redeclaration Error
+let a = 10;
+
+let a = 20;
+
+Output:
+
+SyntaxError
+Block Scope Example
+if (true) {
+  let name = "Shubham";
+}
+
+console.log(name);
+
+Output:
+
+ReferenceError
+
+
+
+
+
+------||------
+
+
+
+
+
+const in JavaScript
+Definition
+
+const is a keyword used to declare block-scoped variables whose value cannot be reassigned after initialization.
+
+Example
+const pi = 3.14;
+
+console.log(pi);
+
+Output:
+
+3.14
+Reassignment Error
+const pi = 3.14;
+
+pi = 10;
+
+Output:
+
+TypeError
+Why?
+
+Because const variables cannot be reassigned.
+
+Features of const
+Block scoped
+Cannot redeclare
+Cannot reassign
+Must initialize during declaration
+Hoisted with TDZ
+Wrong Example
+const a;
+
+Output:
+
+SyntaxError
+Correct Example
+const a = 10;
+Object Example with const
+const user = {
+  name: "Rahul"
+};
+
+user.name = "Aman";
+
+console.log(user.name);
+
+Output:
+
+Aman
+Why Can Object Values Change?
+
+Because:
+
+const locks the reference
+Not the internal values
+
+Object properties can still be modified.
+
+
+
+
+------||------
+
+
+
+
+Temporal Dead Zone (TDZ)
+Definition
+
+Temporal Dead Zone is the time period between variable hoisting and variable initialization where the variable cannot be accessed.
+
+TDZ happens with:
+
+let
+const
+Easy Understanding
+
+Variables are hoisted in memory, but JavaScript does not allow access until initialization is completed.
+
+Example
+console.log(a);
+
+let a = 10;
+
+Output:
+
+ReferenceError
+Why?
+
+Because:
+
+a is hoisted
+But stays inside TDZ
+Access is blocked before initialization
+Visual Understanding
+// TDZ starts
+
+console.log(a); // ❌ Cannot access
+
+let a = 10;
+
+// TDZ ends
+Example with const
+console.log(pi);
+
+const pi = 3.14;
+
+Output:
+
+ReferenceError
+
+
+Why TDZ Exists?
+
+
+TDZ helps:
+
+Prevent accidental bugs
+Avoid using variables before initialization
+Make code safer and predictable
+
+
+
+
+------||-------
+
+
+Classes in JavaScript
+Definition
+
+A class in JavaScript is a blueprint used to create objects.
+
+Classes help us create multiple objects with similar properties and methods easily.
+
+Introduced in ES6, classes make object-oriented programming simpler and cleaner.
+
+Easy Understanding
+
+Imagine:
+
+👉 A class is like a template of a car.
+
+From one template, we can create many cars with different values.
+
+Example:
+
+Car 1 → BMW
+Car 2 → Audi
+Car 3 → Tesla
+
+All cars have:
+
+name
+model
+color
+
+Instead of writing code again and again, we use classes.
+
+Syntax of Class
+class ClassName {
+
+}
+Basic Example
+class Student {
+
+}
+
+Here:
+
+Student is a class
+Creating Object from Class
+
+Objects are created using the new keyword.
+
+Example:
+
+class Student {
+
+}
+
+const s1 = new Student();
+
+console.log(s1);
+
+Output:
+
+Student {}
+
+
+
+
+
+
+----------||-----------
+
+
+Constructor in Class
+Definition
+
+A constructor is a special method that automatically runs when an object is created.
+
+It is used to initialize object properties.
+
+Syntax
+constructor() {
+
+}
+Example
+class Student {
+  constructor() {
+    console.log("Constructor Called");
+  }
+}
+
+const s1 = new Student();
+
+Output:
+
+Constructor Called
+Adding Properties
+class Student {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+const s1 = new Student("Rahul", 22);
+
+console.log(s1);
+
+Output:
+
+Student { name: 'Rahul', age: 22 }
+Explanation
+
+this refers to the current object.
+
+this.name = name;
+
+Means:
+
+👉 Store value inside current object.
+
+Creating Multiple Objects
+class Student {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+const s1 = new Student("Rahul", 22);
+const s2 = new Student("Aman", 20);
+
+console.log(s1);
+console.log(s2);
+
+Output:
+
+Student { name: 'Rahul', age: 22 }
+Student { name: 'Aman', age: 20 }
+Methods in Class
+Definition
+
+Methods are functions created inside a class.
+
+They define the behavior of objects.
+
+Example
+class Student {
+  constructor(name) {
+    this.name = name;
+  }
+
+  greet() {
+    console.log("Hello " + this.name);
+  }
+}
+
+const s1 = new Student("Rahul");
+
+s1.greet();
+
+Output:
+
+Hello Rahul
+Explanation
+greet() is a method
+Methods are shared by all objects
+Real-Life Example
+class Car {
+  constructor(name, color) {
+    this.name = name;
+    this.color = color;
+  }
+
+  start() {
+    console.log(this.name + " Started");
+  }
+}
+
+const car1 = new Car("BMW", "Black");
+
+car1.start();
+
+Output:
+
+BMW Started
+
+
+
+---------\\---------
+
+
+
+Class Expression
+Definition
+
+A class can also be stored inside a variable.
+
+Example
+const Person = class {
+  constructor(name) {
+    this.name = name;
+  }
+};
+
+const p1 = new Person("Rahul");
+
+console.log(p1);
+
+Output:
+
+Person { name: 'Rahul' }
+
+
+
+
+
+----------\\\------------
+
+
+
+
+
+Getter in JavaScript
+Definition
+
+A getter is a special method used to get or access the value of an object property.
+
+Getter allows us to read property values like a normal property instead of calling a function.
+
+Getter is created using the get keyword.
+
+Syntax
+get propertyName() {
+
+}
+Basic Example
+const user = {
+  firstName: "Rahul",
+  lastName: "Sharma",
+
+  get fullName() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+console.log(user.fullName);
+
+Output:
+
+Rahul Sharma
+Explanation
+
+Normally:
+
+user.fullName()
+
+But with getter:
+
+user.fullName
+
+It behaves like a normal property.
+
+Easy Understanding
+
+Getter is used when:
+
+👉 We want controlled access to object data.
+
+Real-Life Example
+class Student {
+  constructor(name, marks) {
+    this.name = name;
+    this.marks = marks;
+  }
+
+  get result() {
+    if (this.marks >= 40) {
+      return "Pass";
+    }
+
+    return "Fail";
+  }
+}
+
+const s1 = new Student("Rahul", 75);
+
+console.log(s1.result);
+
+Output:
+
+Pass
+Important Points About Getter
+Created using get
+Used to access values
+Called like property
+Improves readability
+Helps in data encapsulation
+
+
+
+
+
+------||------
+
+
+
+
+
+Setter in JavaScript
+Definition
+
+A setter is a special method used to set or update the value of an object property.
+
+Setter is created using the set keyword.
+
+Syntax
+set propertyName(value) {
+
+}
+Basic Example
+const user = {
+  firstName: "",
+
+  set name(value) {
+    this.firstName = value;
+  }
+};
+
+user.name = "Rahul";
+
+console.log(user.firstName);
+
+Output:
+
+Rahul
+Explanation
+
+When we write:
+
+user.name = "Rahul";
+
+Setter method automatically runs.
+
+Real-Life Example
+class Employee {
+  constructor() {
+    this._salary = 0;
+  }
+
+  set salary(value) {
+    if (value < 0) {
+      console.log("Salary cannot be negative");
+      return;
+    }
+
+    this._salary = value;
+  }
+
+  get salary() {
+    return this._salary;
+  }
+}
+
+const emp = new Employee();
+
+emp.salary = 50000;
+
+console.log(emp.salary);
+
+Output:
+
+50000
+Explanation
+
+Setter helps us add validation before updating values.
+
+Important Points About Setter
+Created using set
+Used to update values
+Automatically runs during assignment
+Helps in validation
+Improves data security
+Getter and Setter Together
+class User {
+  constructor(name) {
+    this._name = name;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set name(value) {
+    this._name = value;
+  }
+}
+
+const u1 = new User("Rahul");
+
+console.log(u1.name);
+
+u1.name = "Aman";
+
+console.log(u1.name);
+
+Output:
+
+Rahul
+Aman
+Why _name is Used?
+
+Developers commonly use _ to indicate:
+
+👉 Internal/private property
+
+Example:
+
+this._name
+
+It is just a naming convention.
+
+------||------
+
+Default Parameters in JavaScript Function
+Definition
+
+Default parameters allow us to assign default values to function parameters.
+
+If the user does not pass a value, the default value is used automatically.
+
+Introduced in ES6.
+
+Why Use Default Parameters?
+
+Without default values:
+
+Parameters may become undefined
+Program may produce unexpected output
+
+Default parameters solve this problem.
+
+Basic Example
+function greet(name = "Guest") {
+  console.log("Hello " + name);
+}
+
+greet();
+
+Output:
+
+Hello Guest
+Explanation
+
+No argument was passed:
+
+greet();
+
+So default value "Guest" is used.
+
+Passing Value
+function greet(name = "Guest") {
+  console.log("Hello " + name);
+}
+
+greet("Rahul");
+
+Output:
+
+Hello Rahul
+Multiple Default Parameters
+function add(a = 0, b = 0) {
+  console.log(a + b);
+}
+
+add();
+
+Output:
+
+0
+Example
+function multiply(a, b = 1) {
+  return a * b;
+}
+
+console.log(multiply(5));
+
+Output:
+
+5
+Real-Life Example
+function createUser(name = "Unknown", role = "Student") {
+  console.log(name + " is a " + role);
+}
+
+createUser();
+
+Output:
+
+Unknown is a Student
+Important Points About Default Parameters
+Introduced in ES6
+Used to avoid undefined
+Makes functions safer
+Improves readability
+Default value works only when argument is not passed
+Important Interview Point
+What if undefined is passed?
+
+Example:
+
+function test(a = 10) {
+  console.log(a);
+}
+
+test(undefined);
+
+Output:
+
+10
+
+Because:
+
+👉 undefined triggers default value.
+
+What if null is passed?
+function test(a = 10) {
+  console.log(a);
+}
+
+test(null);
+
+Output:
+
+null
+
+Because:
+
+👉 null is treated as an actual value, not missing value.
+
+
+
+
+
+
+-------\\\\---------
+
+
+------||------
+
+1. Math Object
+Definition
+
+The Math object is used to perform mathematical operations in JavaScript.
+
+It provides built-in methods for calculations.
+
+👉 Math is not a constructor.
+
+We directly use:
+
+Math.methodName()
+Commonly Used Math Methods
+Method	Purpose
+Math.round()	Round number
+Math.floor()	Round down
+Math.ceil()	Round up
+Math.random()	Generate random number
+Math.max()	Largest value
+Math.min()	Smallest value
+Math.sqrt()	Square root
+Example 1 → Math.round()
+Definition
+
+Rounds number to nearest integer.
+
+console.log(Math.round(4.6));
+
+Output:
+
+5
+Example 2 → Math.floor()
+Definition
+
+Rounds value downward.
+
+console.log(Math.floor(4.9));
+
+Output:
+
+4
+Example 3 → Math.ceil()
+Definition
+
+Rounds value upward.
+
+console.log(Math.ceil(4.1));
+
+Output:
+
+5
+Example 4 → Math.random()
+Definition
+
+Generates random number between 0 and 1.
+
+console.log(Math.random());
+
+Output:
+
+0.4521
+Random Number Between 1 to 10
+const num = Math.floor(Math.random() * 10) + 1;
+
+console.log(num);
+Example 5 → Math.max()
+console.log(Math.max(10, 50, 20));
+
+Output:
+
+50
+Example 6 → Math.min()
+console.log(Math.min(10, 50, 20));
+
+Output:
+
+10
+Example 7 → Math.sqrt()
+Definition
+
+Returns square root.
+
+console.log(Math.sqrt(64));
+
+Output:
+
+8

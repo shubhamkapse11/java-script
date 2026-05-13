@@ -5,6 +5,8 @@ Task 1
 
 Create function to print your name
 
+ 
+
 
 
 
@@ -29,7 +31,11 @@ function multiply(a, b) {
   return a * b;
 }
 
+
+
 console.log(multiply(5, 4));
+
+
 📝 Task 2
 
 Create function:
