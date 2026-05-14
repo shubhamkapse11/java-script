@@ -9,6 +9,8 @@ the point where the variable is declared and initialized.
 
 During this period, accessing the variable causes a ReferenceError.
 
+
+
 Example
 {
     console.log(a); // ❌ ReferenceError
@@ -17,6 +19,8 @@ Example
 
     console.log(a); // ✅ 10
 }
+
+
 Why Error Happens?
 The variable a is created when the block starts.
 But it stays in the Temporal Dead Zone until the line:
@@ -31,3 +35,752 @@ const x = 5;
 
 Same reason:
 x exists in memory but is unavailable until initialization.
+
+
+
+
+
+
+
+-----------\\\\---------------
+
+
+
+JavaScript Classes
+
+A class in JavaScript is a blueprint for creating objects.
+
+It helps organize code using:
+
+properties (variables)
+methods (functions)
+
+JavaScript classes were introduced in ES6 (ECMAScript 2015).
+
+Basic Syntax
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    greet() {
+        console.log("Hello, my name is " + this.name);
+    }
+}
+Creating Object from Class
+const p1 = new Person("Rahul", 22);
+
+console.log(p1.name); // Rahul
+p1.greet(); // Hello, my name is Rahul
+
+
+
+
+
+Getter and Setter in JavaScript
+Definition
+Getter
+
+A getter is a method used to read or access a property value.
+
+Setter
+
+A setter is a method used to update or modify a property value.
+
+They provide controlled access to object properties.
+
+Basic Example
+class User {
+    constructor(name) {
+        this._name = name;
+    }
+
+    // Getter
+    get name() {
+        return this._name;
+    }
+
+    // Setter
+    set name(value) {
+        this._name = value;
+    }
+}
+
+const user1 = new User("Rahul");
+
+console.log(user1.name); // Getter called
+
+user1.name = "Aman"; // Setter called
+
+console.log(user1.name);
+Output
+Rahul
+Aman
+
+
+
+
+
+-------------////--------------
+
+Default Parameters in JavaScript
+
+Default parameters allow you to give a function parameter a default value if no value is passed.
+
+Syntax
+function functionName(parameter = defaultValue) {
+
+}
+Basic Example
+function greet(name = "Guest") {
+    console.log("Hello " + name);
+}
+
+greet();
+greet("Rahul");
+Output
+Hello Guest
+Hello Rahul
+
+
+
+
+
+--------\\\\----------
+
+
+
+
+1. Math Object
+Definition
+
+The Math object is used to perform mathematical operations in JavaScript.
+
+It provides built-in methods for calculations.
+
+👉 Math is not a constructor.
+
+We directly use:
+
+Math.methodName()
+Commonly Used Math Methods
+Method	Purpose
+Math.round()	Round number
+Math.floor()	Round down
+Math.ceil()	Round up
+Math.random()	Generate random number
+Math.max()	Largest value
+Math.min()	Smallest value
+Math.sqrt()	Square root
+Example 1 → Math.round()
+Definition
+
+Rounds number to nearest integer.
+
+console.log(Math.round(4.6));
+
+Output:
+
+5
+Example 2 → Math.floor()
+Definition
+
+Rounds value downward.
+
+console.log(Math.floor(4.9));
+
+Output:
+
+4
+Example 3 → Math.ceil()
+Definition
+
+Rounds value upward.
+
+console.log(Math.ceil(4.1));
+
+Output:
+
+5
+Example 4 → Math.random()
+Definition
+
+Generates random number between 0 and 1.
+
+console.log(Math.random());
+
+Output:
+
+0.4521
+Random Number Between 1 to 10
+const num = Math.floor(Math.random() * 10) + 1;
+
+console.log(num);
+Example 5 → Math.max()
+console.log(Math.max(10, 50, 20));
+
+Output:
+
+50
+Example 6 → Math.min()
+console.log(Math.min(10, 50, 20));
+
+Output:
+
+10
+Example 7 → Math.sqrt()
+Definition
+
+Returns square root.
+
+console.log(Math.sqrt(64));
+
+Output:
+
+8
+
+
+
+
+
+
+--------------\\\\\\\\\------------------
+
+
+
+
+Object Cloning in JavaScript
+Definition
+
+Object cloning means creating a copy of an object.
+
+The new object contains the same properties and values as the original object.
+
+Why Do We Need Object Cloning?
+
+Objects are stored by reference in JavaScript.
+
+If we directly assign one object to another variable, both variables point to the same memory location.
+
+Because of this:
+
+👉 Changing one object also changes the other.
+
+To avoid this problem, we use object cloning.
+
+Easy Understanding
+
+Imagine:
+
+👉 Original object = Original notebook
+
+👉 Cloned object = Photocopy of notebook
+
+Now both are separate.
+
+Changes in photocopy do not affect original notebook.
+
+
+
+
+Problem Without Cloning
+const user1 = {
+  name: "Rahul"
+};
+
+const user2 = user1;
+
+user2.name = "Aman";
+
+console.log(user1.name);
+
+Output:
+
+Aman
+Why?
+
+Because:
+
+const user2 = user1;
+
+does NOT create a new object.
+
+Both variables point to same object in memory.
+
+Memory Visualization
+user1  -------->  { name: "Rahul" }
+user2  --------/
+
+Both point to same object.
+
+
+
+
+------||------
+
+
+
+
+Method 1 → Object Cloning Using Spread Operator
+Definition
+
+Spread operator (...) copies all properties from one object into another object.
+
+Introduced in ES6.
+
+Syntax
+const newObject = { ...oldObject };
+Example
+const user1 = {
+  name: "Rahul",
+  age: 22
+};
+
+const user2 = { ...user1 };
+
+user2.name = "Aman";
+
+console.log(user1);
+console.log(user2);
+
+Output:
+
+{ name: "Rahul", age: 22 }
+
+{ name: "Aman", age: 22 }
+Explanation
+
+Spread operator creates a new separate object.
+
+Now changing cloned object does not affect original object.
+
+Real-Life Example
+const employee = {
+  name: "Rohit",
+  salary: 50000
+};
+
+const updatedEmployee = {
+  ...employee,
+  salary: 60000
+};
+
+console.log(updatedEmployee);
+
+Output:
+
+{ name: "Rohit", salary: 60000 }
+
+
+
+
+
+------||------
+
+
+
+
+Method 2 → Object Cloning Using Object.assign()
+Definition
+
+Object.assign() copies properties from source object into target object.
+
+Syntax
+Object.assign(target, source)
+Example
+const user1 = {
+  name: "Rahul",
+  age: 22
+};
+
+const user2 = Object.assign({}, user1);
+
+user2.name = "Aman";
+
+console.log(user1);
+console.log(user2);
+
+Output:
+
+{ name: "Rahul", age: 22 }
+
+{ name: "Aman", age: 22 }
+Explanation
+{}
+
+creates empty object.
+
+Then properties from user1 are copied into it.
+
+Multiple Object Merge Example
+const obj1 = {
+  a: 1
+};
+
+const obj2 = {
+  b: 2
+};
+
+const result = Object.assign({}, obj1, obj2);
+
+console.log(result);
+
+Output:
+
+{ a: 1, b: 2 }
+
+
+
+
+
+
+
+
+
+
+--------\\\\\-------------
+
+
+
+
+
+
+Error Handling in JavaScript
+Definition
+
+Error handling is the process of detecting and managing errors in a program so that the application does not crash.
+
+JavaScript provides special statements to handle errors safely.
+
+Why Error Handling is Important?
+
+Without error handling:
+
+Program may stop suddenly
+Application may crash
+Bad user experience occurs
+
+Error handling helps:
+
+✅ Prevent crashes
+✅ Show proper messages
+✅ Make applications stable
+✅ Handle unexpected situations safely
+
+
+
+1. Syntax Error
+Definition
+
+Occurs when JavaScript code has invalid syntax.
+
+Example
+console.log("Hello"
+
+Output:
+
+SyntaxError
+Why?
+
+Closing bracket is missing.
+
+
+
+2. Reference Error
+Definition
+
+Occurs when accessing variable that does not exist.
+
+Example
+console.log(name);
+
+Output:
+
+ReferenceError
+
+
+
+3. Type Error
+Definition
+
+Occurs when operation is performed on wrong data type.
+
+Example
+const num = 10;
+
+num.toUpperCase();
+
+Output:
+
+TypeError
+Why?
+
+toUpperCase() works only on strings.
+
+
+
+
+
+
+
+
+------||------
+
+try...catch in JavaScript
+Definition
+
+try...catch is used to handle errors without stopping the program.
+
+
+
+Syntax
+
+
+try {
+
+}
+catch(error) {
+
+}
+
+
+
+How It Works
+Code inside try executes
+If error occurs → control goes to catch
+Program continues running
+
+Basic Example
+
+
+try {
+  console.log(a);
+}
+catch(error) {
+  console.log("Variable not found");
+}
+
+
+
+Output:
+
+Variable not found
+Explanation
+
+a does not exist.
+
+Instead of crashing:
+
+👉 catch handles the error.
+
+Accessing Error Object
+try {
+  console.log(a);
+}
+catch(error) {
+  console.log(error);
+}
+
+Output:
+
+ReferenceError: a is not defined
+Error Object Properties
+Property	Purpose
+error.name	Error type
+error.message	Error message
+
+
+Example
+try {
+  console.log(a);
+}
+catch(error) {
+  console.log(error.name);
+  console.log(error.message);
+}
+
+Output:
+
+ReferenceError
+a is not defined
+
+
+
+
+------||------
+
+finally in JavaScript
+Definition
+
+finally block always executes whether error occurs or not.
+
+Used for cleanup operations.
+
+Syntax
+try {
+
+}
+catch(error) {
+
+}
+finally {
+
+}
+Example
+try {
+  console.log("Try Block");
+}
+catch(error) {
+  console.log("Catch Block");
+}
+finally {
+  console.log("Finally Block");
+}
+
+Output:
+
+Try Block
+Finally Block
+Example with Error
+try {
+  console.log(a);
+}
+catch(error) {
+  console.log("Error Handled");
+}
+finally {
+  console.log("Always Runs");
+}
+
+Output:
+
+Error Handled
+Always Runs
+Why Use finally?
+
+Used for:
+
+Closing database connection
+Stopping loaders
+Cleaning resources
+Logout operations
+Easy Understanding
+
+finally means:
+
+👉 “No matter what happens, this code must run.”
+
+------||------
+
+throw Keyword in JavaScript
+Definition
+
+throw is used to create custom errors manually.
+
+Syntax
+throw "Error Message";
+Example
+function checkAge(age) {
+
+  if (age < 18) {
+    throw "You are not eligible";
+  }
+
+  console.log("Eligible");
+}
+
+try {
+  checkAge(15);
+}
+catch(error) {
+  console.log(error);
+}
+
+Output:
+
+You are not eligible
+Explanation
+
+We manually created an error using throw.
+
+Better Example Using Error
+function divide(a, b) {
+
+  if (b === 0) {
+    throw new Error("Cannot divide by zero");
+  }
+
+  return a / b;
+}
+
+try {
+  console.log(divide(10, 0));
+}
+catch(error) {
+  console.log(error.message);
+}
+
+Output:
+
+Cannot divide by zero
+Why Use Error Object?
+
+Because it provides:
+
+Error type
+Message
+Stack trace
+
+Better for debugging.
+
+------||------
+
+Real-Life Example of Error Handling
+function login(username) {
+
+  try {
+
+    if (!username) {
+      throw new Error("Username is required");
+    }
+
+    console.log("Login Successful");
+
+  }
+  catch(error) {
+
+    console.log(error.message);
+
+  }
+}
+
+login("");
+
+Output:
+
+Username is required
+Explanation
+
+If user forgets username:
+
+👉 Program handles error safely instead of crashing.
+
+------||------
+
+Important Interview Points
+Concept	Purpose
+try	Code to test
+catch	Handle error
+finally	Always executes
+throw	Create custom error
+Difference Between throw and catch
+throw	catch
+Creates error	Handles error
+Used manually	Used to receive error
+Important Notes
+try cannot work alone with catch or finally
+catch runs only when error occurs
+finally always runs
+Error handling improves application stability
+

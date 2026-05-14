@@ -1,0 +1,216 @@
+Task 1 — Hoisting and TDZ
+
+Question:
+Predict the output and explain why.
+
+Code:
+
+console.log(a);
+
+var a = 10;
+
+console.log(b);
+
+let b = 20;
+
+Requirements:
+1. Explain output of first console.log()
+2. Explain why second console.log() gives error
+3. Identify:
+   - Hoisting
+   - undefined
+   - TDZ (Temporal Dead Zone)
+
+
+
+
+
+--------------------------------------------------
+
+
+
+
+
+Task 2 — Function Hoisting
+
+Question:
+Predict the output.
+
+Code:
+
+hello();
+
+function hello() {
+  console.log("Hello Students");
+}
+
+hi();
+
+var hi = function () {
+  console.log("Hi");
+};
+
+Requirements:
+1. Explain why hello() works before declaration
+2. Explain why hi() gives error
+3. Differentiate:
+   - Function Declaration
+   - Function Expression
+
+
+
+
+
+--------------------------------------------------
+
+
+
+
+
+Task 3 — Class and Constructor
+
+Question:
+Create a class named Car.
+
+Requirements:
+1. Constructor should take:
+   - name
+   - color
+
+2. Create a method:
+   start()
+
+3. Output should be:
+   "BMW Started"
+
+Example:
+
+const car1 = new Car("BMW", "Black");
+
+car1.start();
+
+Expected Output:
+
+BMW Started
+
+
+
+
+
+--------------------------------------------------
+
+
+
+
+
+Task 4 — Getter and Setter
+
+Question:
+Create a class named BankAccount.
+
+Requirements:
+1. Create private property:
+   _balance
+
+2. Create getter:
+   balance
+
+3. Create setter:
+   balance
+
+4. Setter should not allow negative values
+
+Example:
+
+acc.balance = -500;
+
+Expected Output:
+
+Balance cannot be negative
+
+Example:
+
+acc.balance = 1000;
+
+console.log(acc.balance);
+
+Expected Output:
+
+1000
+
+
+
+
+
+--------------------------------------------------
+
+
+
+
+
+Task 5 — Error Handling and Object Cloning
+
+Question:
+Create an object:
+
+const user = {
+  name: "Rahul",
+  age: 16
+};
+
+Requirements:
+1. Clone object using spread operator
+2. Change cloned object's name
+3. Use try...catch
+4. Throw custom error if age is below 18
+
+Example Error:
+
+throw new Error("User is underage");
+
+Expected Output:
+
+User is underage
+
+Also print:
+- Original object
+- Cloned object
+
+
+
+
+
+--------------------------------------------------
+
+
+
+
+
+Bonus Task — Student Result System
+
+Question:
+Create a class named Student.
+
+Requirements:
+1. Constructor should take:
+   - name
+   - marks
+
+2. Create getter:
+   result
+
+3. If marks >= 40:
+   Return "Pass"
+
+4. Otherwise:
+   Return "Fail"
+
+Example:
+
+const s1 = new Student("Rahul", 75);
+
+console.log(s1.result);
+
+Expected Output:
+
+Pass

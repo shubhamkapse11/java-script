@@ -814,7 +814,13 @@ this._name
 
 It is just a naming convention.
 
+
+
+
 ------||------
+
+
+
 
 Default Parameters in JavaScript Function
 Definition
@@ -937,95 +943,4 @@ Because:
 
 
 
--------\\\\---------
 
-
-------||------
-
-1. Math Object
-Definition
-
-The Math object is used to perform mathematical operations in JavaScript.
-
-It provides built-in methods for calculations.
-
-👉 Math is not a constructor.
-
-We directly use:
-
-Math.methodName()
-Commonly Used Math Methods
-Method	Purpose
-Math.round()	Round number
-Math.floor()	Round down
-Math.ceil()	Round up
-Math.random()	Generate random number
-Math.max()	Largest value
-Math.min()	Smallest value
-Math.sqrt()	Square root
-Example 1 → Math.round()
-Definition
-
-Rounds number to nearest integer.
-
-console.log(Math.round(4.6));
-
-Output:
-
-5
-Example 2 → Math.floor()
-Definition
-
-Rounds value downward.
-
-console.log(Math.floor(4.9));
-
-Output:
-
-4
-Example 3 → Math.ceil()
-Definition
-
-Rounds value upward.
-
-console.log(Math.ceil(4.1));
-
-Output:
-
-5
-Example 4 → Math.random()
-Definition
-
-Generates random number between 0 and 1.
-
-console.log(Math.random());
-
-Output:
-
-0.4521
-Random Number Between 1 to 10
-const num = Math.floor(Math.random() * 10) + 1;
-
-console.log(num);
-Example 5 → Math.max()
-console.log(Math.max(10, 50, 20));
-
-Output:
-
-50
-Example 6 → Math.min()
-console.log(Math.min(10, 50, 20));
-
-Output:
-
-10
-Example 7 → Math.sqrt()
-Definition
-
-Returns square root.
-
-console.log(Math.sqrt(64));
-
-Output:
-
-8

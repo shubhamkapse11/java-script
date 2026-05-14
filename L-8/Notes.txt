@@ -1,0 +1,851 @@
+Garbage collection ;
+
+
+
+
+
+Definition
+
+Before learning DOM Manipulation, students should first understand where JavaScript runs and what objects the browser provides.
+
+JavaScript inside a browser mainly works with three important concepts:
+
+Window Object → The top-most global object of the browser
+DOM (Document Object Model) → Represents HTML elements as objects
+BOM (Browser Object Model) → Allows interaction with browser features
+
+Think of it like this:
+
+Window = Complete house
+DOM = Furniture/items inside the house
+BOM = House controls (door, location, history, notifications, etc.)
+
+1. Window Object
+Definition
+
+The Window Object is the global object in the browser.
+
+Everything in JavaScript inside a browser comes under the window object.
+
+It represents the entire browser window and provides built-in properties and methods.
+
+Examples:
+
+alert()
+console.log()
+document
+location
+history
+navigator
+
+Actually JavaScript internally treats them like:
+
+window.alert()
+window.document
+window.console.log()
+
+But because window is global, we usually omit writing it.
+
+Why do we use it?
+
+The window object helps us:
+
+Access browser features
+Access DOM
+Show popup messages
+Work with browser location
+Handle browser history
+Store data
+Example 1: Using alert through window
+window.alert("Welcome Students");
+
+Output:
+
+Popup message appears.
+
+-----------\------------
+
+Example 2: Window keyword omitted
+alert("Hello");
+
+JavaScript automatically understands:
+
+window.alert("Hello");
+
+-----------\------------
+
+Example 3: Checking Window Object
+console.log(window);
+
+Output:
+
+Shows all browser properties and methods.
+
+-----------\------------
+
+Important Points
+Window is the top-level object
+Global variables become part of window
+DOM and BOM both come under window
+
+Example:
+
+var name="Shubham";
+
+console.log(window.name);
+
+-----------\------------
+
+
+
+
+
+
+
+
+
+
+
+DOM (Document Object Model)
+Definition
+
+DOM stands for Document Object Model
+
+DOM converts an HTML page into JavaScript objects.
+
+JavaScript cannot directly understand HTML tags.
+
+The browser converts HTML elements into objects so JavaScript can access and modify them.
+
+Because of DOM we can:
+
+Change text
+Change styles
+Add elements
+Remove elements
+Handle events
+Real-Life Example
+
+Imagine HTML is a building blueprint.
+
+DOM creates a model of that building that JavaScript can control.
+
+Without DOM:
+
+JavaScript could see the page but could not change anything.
+
+HTML:
+
+<h1 id="heading">Hello</h1>
+
+Browser converts internally:
+
+document={
+   h1:{
+      id:"heading",
+      innerText:"Hello"
+   }
+}
+
+This is simplified understanding.
+
+Example 1: Access element
+
+HTML:
+
+<h1 id="title">Welcome</h1>
+
+JS:
+
+let data=document.getElementById("title");
+
+console.log(data);
+
+Output:
+
+Entire h1 element object
+
+-----------\------------
+
+Example 2: Change text
+
+HTML:
+
+<h1 id="title">Hello</h1>
+
+JS:
+
+document.getElementById("title").innerText="Students";
+
+Output:
+
+Students
+
+-----------\------------
+
+Example 3: Change style
+
+HTML:
+
+<p id="demo">Javascript</p>
+
+JS:
+
+document.getElementById("demo").style.color="red";
+
+-----------\------------
+
+Important Points
+DOM represents HTML as objects
+JavaScript manipulates HTML through DOM
+DOM creates a tree structure
+
+Example:
+
+html
+   head
+   body
+      h1
+      p
+      button
+
+This is called DOM Tree
+
+-----------\------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. BOM (Browser Object Model)
+Definition
+
+BOM stands for Browser Object Model
+
+BOM allows JavaScript to interact with browser-related features other than HTML.
+
+DOM works with webpage elements.
+
+BOM works with browser functionalities.
+
+Examples:
+
+location
+history
+navigator
+screen
+alert
+confirm
+Why do we use BOM?
+
+Using BOM we can:
+
+Get browser information
+Redirect users
+Check browser details
+Access URL
+Navigate browser history
+Example 1: Browser URL
+console.log(location.href);
+
+Output:
+
+Current page URL
+
+-----------\------------
+
+Example 2: Reload page
+location.reload();
+
+Output:
+
+Current page refreshes
+
+-----------\------------
+
+Example 3: Browser information
+console.log(navigator.userAgent);
+
+Output:
+
+Shows browser details
+
+-----------\------------
+
+Example 4: Go back page
+history.back();
+
+Output:
+
+Moves browser to previous page
+
+
+
+
+
+
+
+
+
+
+Easy Understanding
+
+Imagine a webpage is a classroom.
+
+JavaScript is the teacher.
+
+Students are HTML elements.
+
+To talk to a specific student, teacher must first identify them.
+
+Teacher can identify by:
+
+Roll number → ID
+Group name → Class
+Student type → Tag
+
+Same way JavaScript identifies HTML elements.
+
+------||------
+
+1. getElementById()
+Definition
+
+getElementById() selects an element using its unique ID.
+
+ID should be unique because only one element should have a particular ID.
+
+Syntax
+document.getElementById("idName")
+Example
+
+HTML:
+
+<h1 id="title">Hello Students</h1>
+
+-----------\------------
+
+JavaScript:
+
+const element = document.getElementById("title");
+
+console.log(element);
+
+Output:
+
+<h1>Hello Students</h1>
+Changing Content Example
+
+HTML:
+
+<h1 id="heading">Welcome</h1>
+
+-----------\------------
+
+JavaScript:
+
+document.getElementById("heading").innerText = "JavaScript Class";
+
+Output on webpage:
+
+JavaScript Class
+Important Points
+Selects by ID
+Returns single element
+ID should be unique
+
+------||------
+
+
+
+
+
+
+
+
+
+
+
+------||------
+
+2. getElementsByClassName()
+Definition
+
+getElementsByClassName() selects elements having same class name.
+
+Because multiple elements can have same class, it returns a collection.
+
+Syntax
+document.getElementsByClassName("className")
+Example
+
+HTML:
+
+<p class="text">HTML</p>
+
+<p class="text">CSS</p>
+
+<p class="text">JavaScript</p>
+
+-----------\------------
+
+JavaScript:
+
+const items = document.getElementsByClassName("text");
+
+console.log(items);
+
+Output:
+
+HTMLCollection(3)
+Access Specific Element
+console.log(items[0]);
+
+Output:
+
+<p>HTML</p>
+Important Points
+Returns HTMLCollection
+Can select multiple elements
+Access elements using index
+
+------||------
+
+3. getElementsByTagName()
+Definition
+
+getElementsByTagName() selects elements using HTML tag names.
+
+Syntax
+document.getElementsByTagName("tag")
+Example
+
+HTML:
+
+<h2>Hello</h2>
+
+<h2>Students</h2>
+
+-----------\------------
+
+JavaScript:
+
+const headings = document.getElementsByTagName("h2");
+
+console.log(headings);
+
+Output:
+
+HTMLCollection(2)
+Access Element
+console.log(headings[1]);
+
+Output:
+
+<h2>Students</h2>
+Important Points
+Selects by tag
+Returns HTMLCollection
+Multiple elements possible
+
+------||------
+
+
+
+4. querySelector()
+Definition
+
+querySelector() selects the first matching element using CSS selectors.
+
+This method is highly used in modern JavaScript.
+
+Syntax
+document.querySelector("selector")
+Selecting ID
+
+HTML:
+
+<h1 id="title">Hello</h1>
+
+-----------\------------
+
+JavaScript:
+
+const element = document.querySelector("#title");
+
+console.log(element);
+
+Output:
+
+<h1>Hello</h1>
+Selecting Class
+
+HTML:
+
+<p class="text">HTML</p>
+
+-----------\------------
+
+JavaScript:
+
+const element = document.querySelector(".text");
+Selecting Tag
+const element = document.querySelector("p");
+Important Points
+Returns first matching element only
+Uses CSS selectors
+Most commonly used in projects
+
+------||------
+
+
+
+
+5. querySelectorAll()
+Definition
+
+querySelectorAll() selects all matching elements using CSS selectors.
+
+Returns a NodeList.
+
+Syntax
+document.querySelectorAll("selector")
+Example
+
+HTML:
+
+<li class="fruit">Apple</li>
+
+<li class="fruit">Mango</li>
+
+<li class="fruit">Orange</li>
+
+-----------\------------
+
+JavaScript:
+
+const fruits = document.querySelectorAll(".fruit");
+
+console.log(fruits);
+
+Output:
+
+NodeList(3)
+Access Elements
+console.log(fruits[1]);
+
+Output:
+
+<li>Mango</li>
+Loop Example
+fruits.forEach((item) => {
+   console.log(item.innerText);
+});
+
+Output:
+
+Apple
+
+Mango
+
+Orange
+Important Points
+
+
+
+
+
+
+
+
+Updating Elements in JavaScript
+Definition
+
+Updating elements means changing or modifying the content of HTML elements dynamically using JavaScript.
+
+JavaScript allows us to update:
+
+Text
+HTML content
+Entire element content
+Dynamic data from users
+
+This helps create interactive webpages.
+
+Easy Understanding
+
+Imagine:
+
+A teacher writes on a classroom board:
+
+Welcome Students
+
+Later teacher changes it to:
+
+JavaScript Class Started
+
+The board remains same.
+
+Only content changes.
+
+Similarly, JavaScript updates webpage content dynamically.
+
+JavaScript provides commonly used properties:
+innerHTML
+innerText
+textContent
+
+------||------
+
+1. innerHTML
+Definition
+
+innerHTML is used to get or set HTML content inside an element.
+
+It reads both:
+
+Text
+HTML tags
+
+It can also add new HTML elements.
+
+Syntax
+element.innerHTML
+
+OR
+
+element.innerHTML = "new content"
+Example
+
+HTML:
+
+<h1 id="heading">Hello</h1>
+
+-----------\------------
+
+JavaScript:
+
+document.getElementById("heading").innerHTML = "Welcome Students";
+
+Output:
+
+Welcome Students
+Adding HTML Tags
+
+HTML:
+
+<div id="box"></div>
+
+-----------\------------
+
+JavaScript:
+
+document.getElementById("box").innerHTML =
+"<h2>JavaScript</h2>";
+
+Output:
+
+<h2>JavaScript</h2>
+Explanation
+
+innerHTML understands HTML tags.
+
+It creates actual HTML elements.
+
+Example with Multiple Tags
+document.getElementById("box").innerHTML =
+`
+<h1>Hello</h1>
+
+<p>Students</p>
+`;
+
+Output on webpage:
+
+Hello
+
+Students
+Important Points
+Reads HTML tags
+Can create elements
+Can replace existing content
+Used frequently in dynamic UI
+
+------||------
+
+2. innerText
+Definition
+
+innerText is used to get or update visible text inside an element.
+
+It only works with text visible on webpage.
+
+HTML tags are treated as normal text.
+
+Syntax
+element.innerText
+
+
+
+
+OR
+
+element.innerText = "Text"
+Example
+
+HTML:
+
+<h1 id="title">Hello</h1>
+
+-----------\------------
+
+JavaScript:
+
+document.getElementById("title").innerText =
+"Welcome";
+
+Output:
+
+Welcome
+Example with HTML Tag
+document.getElementById("title").innerText =
+"<h1>Hello</h1>";
+
+Output on webpage:
+
+<h1>Hello</h1>
+Explanation
+
+Because innerText does not understand HTML.
+
+It prints tags as plain text.
+
+
+
+Hidden Element Example
+
+
+HTML:
+
+<p id="demo">
+
+Hello
+
+<span style="display:none">
+Hidden Text
+</span>
+
+</p>
+
+
+
+-----------\------------
+
+JavaScript:
+
+console.log(
+document.getElementById("demo").innerText
+);
+
+Output:
+
+Hello
+Why?
+
+innerText returns only visible text.
+
+
+
+
+
+
+
+
+3. textContent
+Definition
+
+textContent is used to get or set all text content inside an element.
+
+It returns:
+
+✅ Visible text
+
+✅ Hidden text
+
+❌ Ignores HTML structure
+
+Syntax
+element.textContent
+
+OR
+
+element.textContent = "Text"
+Example
+
+HTML:
+
+<h1 id="heading">Hello</h1>
+
+-----------\------------
+
+JavaScript:
+
+document.getElementById("heading")
+.textContent = "JavaScript";
+
+Output:
+
+JavaScript
+Example with Hidden Text
+
+HTML:
+
+<p id="demo">
+
+Hello
+
+<span style="display:none">
+Hidden Text
+</span>
+
+</p>
+
+-----------\------------
+
+JavaScript:
+
+console.log(
+document.getElementById("demo")
+.textContent
+);
+
+Output:
+
+Hello Hidden Text
+Explanation
+
+Unlike innerText:
+
+textContent also returns hidden content.
+
+Example with HTML Tags
+document.getElementById("demo")
+.textContent =
+"<h1>Hello</h1>";
+
+Output:
+
+<h1>Hello</h1>
+
+HTML tags become plain text.
+
+------||------
